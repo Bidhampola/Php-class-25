@@ -33,13 +33,16 @@ echo "<br>";
 echo $fname ." ". $lname;
 echo "<br>";
 
-$num1 = 50;
+$num1 = 50; //initialisation
+$test; //declaration
+$test = 2;//initialized
 $num2 = 40;
 
 $sum = $num1 + $num2;
 echo $sum;
 
 echo 2**3
+
 
 
 
