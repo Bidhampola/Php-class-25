@@ -1,6 +1,6 @@
 <?php
 //string first
-$age = 40;
+// $age = 40;
 $fname = 'Brian $age';  //single
 $lname = "Bidha $age";  //double
 
@@ -10,21 +10,23 @@ echo $lname ."<br />";
 //herodoc and nowdoc
 //herodoc behaves like double quotes while nowdoc behaves like single quotes
 
-//herodoc
-
-$sch = <<<SCH
-Herodoc
-<br>
-my name is brian
-<p>my age is $age</p>
-SCH;
-
-echo $sch."<br />";
+//HERODOC
+$ag = 40;
+$t = 'tired';
+$herodoc = <<<"TEXT"
+     <p>Welcome to herodoc</p>
+    <p>Welcome to herodoc</p>
+    <h4>Jimmy left at lunch at time because he was $t</h4>
+TEXT;
 
 //nowdoc
-$hosp = <<<'HOSP'
-NOWDOC
-<p> My age is $age</p>
-HOSP;
+$nowdoc = <<<'body'
+<p>Welcome to nowdoc</p>
+    <p>Welcome to nowdoc</p>
+    <h4>Jimmy left at lunch at time because he was $t</h4>
+body;
 
-echo $hosp."<br />";
+echo $herodoc;
+echo "\n";
+
+echo $nowdoc;
