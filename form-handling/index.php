@@ -13,7 +13,7 @@
     <h4>Login Form</h4>
     <form action="process.php" method="post">
         <label for="">Username</label>
-        <input type="text" name="username" placeholder="Enter username" required>
+        <input type="text" name="username" placeholder="Enter username">
         <br>
         <br>
         <label for="">Password</label>
