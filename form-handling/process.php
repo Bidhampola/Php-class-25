@@ -4,8 +4,13 @@ require_once '../conn.php';
 $uname = $_POST["username"];
 $pass = $_POST['password'];
 
+//encrypting password such that its not readable from the tables
+//using md5 method
+
+$passHash = md5($pass);
+echo "Your password hash for $pass is $passHash";
 if(!empty($uname) && !empty($pass)){
-    $insert = "INSERT into users(username,password) VALUES ('$uname','$pass')"; //insertation query
+    $insert = "INSERT into users(username,password) VALUES ('$uname','$passHash')"; //insertation query
     $query = mysqli_query($con,$insert); //insertion process
     if($query){
         echo "Data inserted successfully";
