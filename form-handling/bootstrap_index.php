@@ -11,6 +11,7 @@
     <title>users</title>
   </head>
   <body>
+    <div class="container">
     <h1>View Users</h1>
     <hr>
 
@@ -28,6 +29,7 @@
             <th>Username</th>
             <th>Password</th>
             <th>Created On</th>
+            <th>Action</th>
         </tr>
       </thead>
 
@@ -39,6 +41,12 @@
          <td><?php echo $row['username'] ?></td>
          <td><?php echo $row['password'] ?></td>
          <td><?php echo $row['created_on'] ?></td>
+         <td>
+          <a href="" style="color:green">view</a>
+          <a href="">Edit</a>
+          <a href="delete.php?id=<?=$row['id']?>" style="color:red">Delete</a>
+
+         </td>
       </tr>
       <?php } ?>
     </tbody>
@@ -51,6 +59,6 @@
 ?>
  
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
+    </div>
   </body>
 </html>
