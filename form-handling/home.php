@@ -10,7 +10,7 @@
     <title>Document</title>
 </head>
 <body style="text-align:center">
-    <h4>Login Form</h4>
+    <h4>Registration Form</h4>
     <form action="process.php" method="post">
         <label for="">Username</label>
         <input type="text" name="username" placeholder="Enter username">

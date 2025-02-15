@@ -22,6 +22,12 @@
 
   if(mysqli_num_rows($result) > 0){?>
 
+<!-- adding message  -->
+  <div class="alert alert-success">
+    <h4><?php echo $_GET['insertMsg'] ?></h4>
+  </div>
+
+  <hr>
   <table class="table table-striped">
       <thead>
         <tr>
