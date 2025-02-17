@@ -12,14 +12,27 @@
   </head>
   <body>
     <div class="container">
-        
+        <div class="row mt-5">
+          <div class="col-sm-3"></div>
+          <div class="col-sm-6">
+            <?php if(isset($_GET['loginFailed'])){?>
+              <div class="alert alert-danger">
+                <h6>
+                  <?php echo $_GET['loginFailed'] ?>
+                </h6>
+              </div>
+            <?php } ?>
+          </div>
+          <div class="col-sm-3"></div>
+
+        </div>
         <div class="row">
             <div class="col-sm-3"></div>
             <div class="col-sm-6">
             <h3>Login Here</h3>
 
                 <!-- start of form  -->
-            <form  method="get" action="loginController.php">
+            <form  method="post" action="loginController.php">
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Username</label>
                     <input type="text" class="form-control" id="" aria-describedby="emailHelp" name="username">

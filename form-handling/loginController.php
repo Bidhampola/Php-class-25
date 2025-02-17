@@ -1,17 +1,23 @@
 <?php
-
-echo "Login controller <br>";
-
-// $username = $_GET['username'];
-// $password = $_GET['password'];
-$alll = $_GET;
-
-print_r($alll['password']);
+require "../conn.php";
 
 
-// echo "Your username is $username";
-// echo "<br>";
-// echo "Your password is $password";
 
 
-?>
+$username = $_POST['username'];
+$password = $_POST['password'];
+
+$hash = md5($password);
+
+//check if username and password exist in the db
+
+echo "<br>";
+$query = "SELECT * FROM users where username ='$username' and password = '$hash'";
+$result = mysqli_query($con,$query);
+
+if(mysqli_num_rows($result) > 0){
+    echo "Login successfully";
+}
+else{
+    echo "Wrong passsword and username";
+}
