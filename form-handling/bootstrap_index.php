@@ -23,9 +23,17 @@
   if(mysqli_num_rows($result) > 0){?>
 
 <!-- adding message  -->
+ <?php if(isset($_GET['insertMsg'])){?>
   <div class="alert alert-success">
     <h4><?php echo $_GET['insertMsg'] ?></h4>
   </div>
+  <?php } ?>
+
+  <?php if(isset($_GET['deletetMsg'])){?>
+  <div class="alert alert-success">
+    <h4><?php echo $_GET['deleteMsg'] ?></h4>
+  </div>
+  <?php } ?>
 
   <hr>
   <table class="table table-striped">
@@ -50,7 +58,7 @@
          <td>
           <a href="" style="color:green">view</a>
           <a href="">Edit</a>
-          <a href="delete.php?id=<?=$row['id']?>" style="color:red">Delete</a>
+          <a href="delete.php?id=<?=$row['id']?>" style="color:red" id="delete" onclick="return confirm('Are you sure you want to delete?')">Deleting</a>
 
          </td>
       </tr>
@@ -68,3 +76,12 @@
     </div>
   </body>
 </html>
+
+<!-- <script>
+  console.log('heree')
+  document.querySelector('#delete').addEventListener('click',function(e){
+    console.log('delete')
+    e.preventDefault
+    alert('clicked delete')
+  })
+</script> -->
