@@ -23,6 +23,13 @@
   if(mysqli_num_rows($result) > 0){?>
 
 <!-- adding message  -->
+
+<?php if(isset($_GET['updateMsg'])){?>
+  <div class="alert alert-success">
+    <h4><?php echo $_GET['updateMsg'] ?></h4>
+  </div>
+  <?php } ?>
+
  <?php if(isset($_GET['insertMsg'])){?>
   <div class="alert alert-success">
     <h4><?php echo $_GET['insertMsg'] ?></h4>
@@ -57,7 +64,7 @@
          <td><?php echo $row['created_on'] ?></td>
          <td>
           <a href="" style="color:green">view</a>
-          <a href="">Edit</a>
+          <a href="update.php?id=<?= $row['id']?>">Edit</a>
           <a href="delete.php?id=<?=$row['id']?>" style="color:red" id="delete" onclick="return confirm('Are you sure you want to delete?')">Deleting</a>
 
          </td>
